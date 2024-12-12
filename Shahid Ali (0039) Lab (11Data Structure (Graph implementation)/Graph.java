@@ -1,4 +1,3 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
@@ -15,18 +14,16 @@ import java.util.List;
  * @author Shahid Ali
  */
 public class Graph_ {
-  
+
     public void addEdge(int[][] matrix,int v1,int v2){
        matrix[v1][v2]=1;
-       matrix[v2][v1]=1;
-       
-       
+       matrix[v2][v1]=1;   
     }
     public void displayMatrix(int[][] matrix) {
         for (int[] i: matrix) {
             for (int j: i) {
-                System.out.print(j);
-            }
+          System.out.print(j);
+     }
             System.out.println();
         }
     }
@@ -50,12 +47,12 @@ public void ShortestPath(int matrix[][],int start,int destination){
    }
       visited[u]=true;
    for (int v=0;v<n;v++){
-       if(matrix[u][v]!=0 && !visited[v]){
+     if(matrix[u][v]!=0 && !visited[v]){
        int alt=distance[u]+matrix[u][v];
-       if(alt<distance[v]){
-       distance[v]=alt;
-       prev[v]=u;
-       }
+      if(alt<distance[v]){
+     distance[v]=alt;
+     prev[v]=u;
+     }
        }
      }
    }
@@ -85,11 +82,11 @@ for(int i=0;i<pth.size();i++){
         } else {
             System.out.println("All paths from vertex " + (start + 1) + " to vertex " + (destination + 1) + ":");
             for (List<Integer> path : allPaths) {
-                for (int i = 0; i < path.size(); i++) {
-                    System.out.print((path.get(i) + 1));
-                    if (i < path.size() - 1) {
-                        System.out.print(" → ");
-                    }
+           for (int i = 0; i < path.size(); i++) {
+            System.out.print((path.get(i) + 1)); 
+          if (i < path.size() - 1) {
+         System.out.print(" → ");
+            }
                 }
                 System.out.println();
             }
@@ -100,7 +97,7 @@ for(int i=0;i<pth.size();i++){
         currentPath.add(current);
 
         if (current == destination) {
-            allPaths.add(new ArrayList<>(currentPath)); // Add the current path when destination is reached
+            allPaths.add(new ArrayList<>(currentPath)); 
         } else {
             // Explore all neighbors
             for (int i = 0; i < matrix.length; i++) {
@@ -110,21 +107,21 @@ for(int i=0;i<pth.size();i++){
             }
         }
 
-     
+        // Backtrack:
         visited[current] = false;
         currentPath.remove(currentPath.size() - 1);
     }
     public static void main(String[] args) {
-       
-        Graph_ g=new Graph_();
+ 
+        Graph_ g = new Graph_();
          int v = 4; 
         int[][] matrix = new int[v][v];
         g.addEdge(matrix, 0, 1);
         g.addEdge(matrix, 1, 2);
         g.addEdge(matrix, 2, 3);
         g.addEdge(matrix, 3, 0);
-       g.displayMatrix(matrix);
+        g.displayMatrix(matrix);
         g.ShortestPath(matrix, 0, 3);
     }
-    
 }
+
