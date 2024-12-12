@@ -1,13 +1,20 @@
 
-package graph;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package graph_;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
-public class Graph {
+/**
+ *
+ * @author Shahid Ali
+ */
+public class Graph_ {
   
     public void addEdge(int[][] matrix,int v1,int v2){
        matrix[v1][v2]=1;
@@ -103,13 +110,13 @@ for(int i=0;i<pth.size();i++){
             }
         }
 
-        // Backtrack:
+     
         visited[current] = false;
         currentPath.remove(currentPath.size() - 1);
     }
     public static void main(String[] args) {
-        // TODO code application logic here
-        Graph g=new Graph();
+       
+        Graph_ g=new Graph_();
          int v = 4; 
         int[][] matrix = new int[v][v];
         g.addEdge(matrix, 0, 1);
