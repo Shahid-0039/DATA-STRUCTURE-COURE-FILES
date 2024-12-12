@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package graph;
 
 import java.util.ArrayList;
@@ -9,10 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/**
- *
- * @author TGM
- */
+
 public class Graph {
   
     public void addEdge(int[][] matrix,int v1,int v2){
@@ -85,7 +79,7 @@ for(int i=0;i<pth.size();i++){
             System.out.println("All paths from vertex " + (start + 1) + " to vertex " + (destination + 1) + ":");
             for (List<Integer> path : allPaths) {
                 for (int i = 0; i < path.size(); i++) {
-                    System.out.print((path.get(i) + 1)); // Convert to 1-based index
+                    System.out.print((path.get(i) + 1));
                     if (i < path.size() - 1) {
                         System.out.print(" → ");
                     }
